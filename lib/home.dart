@@ -6,17 +6,19 @@ import 'package:facebook/sections/story_section.dart';
 import 'package:facebook/widgets/circular_button.dart';
 import 'package:facebook/widgets/avatar.dart';
 import 'package:facebook/widgets/divider_widget.dart';
+import 'package:facebook/widgets/post_cards.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-
-    Widget thickDivider(){
-      return Divider(thickness: 10,color: Colors.grey[300],);
+    Widget thickDivider() {
+      return Divider(
+        thickness: 10,
+        color: Colors.grey[300],
+      );
     }
 
     return MaterialApp(
@@ -35,15 +37,19 @@ class Home extends StatelessWidget {
           ),
           actions: [
             CircularButton(
-                buttonIcon: Icons.search,
-                buttonAction: () {
-                  print("Search button");
-                }, iconColor: Colors.black,),
+              buttonIcon: Icons.search,
+              buttonAction: () {
+                print("Search button");
+              },
+              iconColor: Colors.black,
+            ),
             CircularButton(
-                buttonIcon: Icons.message,
-                buttonAction: () {
-                  print("message button");
-                }, iconColor:  Colors.black,),
+              buttonIcon: Icons.message,
+              buttonAction: () {
+                print("message button");
+              },
+              iconColor: Colors.black,
+            ),
 
             // this is the code and this container is refactored above .see appBarButton.dart
             Container(
@@ -74,6 +80,14 @@ class Home extends StatelessWidget {
             thickDivider(),
             StorySection(),
             thickDivider(),
+            PostCards(
+              avatarImage: avatar_08,
+              profileName: "Mohanlal",
+              publishedAt: '6 h',
+              postTitle: 'Happy Diwali !!',
+              postImage: posts_06,
+              showBlueTick: true,
+            ),
           ],
         ),
       ),
